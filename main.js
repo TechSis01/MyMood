@@ -164,10 +164,17 @@ pauseBtn.addEventListener('click',()=>{
 playBtn.addEventListener('click',()=>{
   myAudio.play()
 })
+const body = document.querySelector('body')
 
+let colors = ['#abff4f','#e2eafc','#e6d996','#ffc6ff','#e85d04','#f8ad9d']
 
- const body = document.querySelector('body')
-let change = (color,delay)=>{
+function changebackGround(){
+  let colorIndex = Math.floor(Math.random() * 6)
+  body.style.backgroundColor = colors[colorIndex]
+}
+ 
+setInterval(changebackGround,2000)
+/*let change = (color,delay)=>{
   return new Promise ((resolve,reject)=>{
     setInterval(()=>{
         body.style.backgroundColor = color
@@ -181,4 +188,4 @@ change('#abff4f',2000)
   return change('#e2eafc',2000)
 })
 
-setInterval(change,5000)
+*/
